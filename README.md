@@ -1,4 +1,4 @@
-[![HacktoberFest 2022](./assets/banner.png)](https://hacktoberfest.com)
+[![HacktoberFest 2022](./assets/logo.png)](https://hacktoberfest.com)
 
 # HacktoberFest 2022
 
