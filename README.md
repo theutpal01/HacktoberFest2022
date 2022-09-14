@@ -1,4 +1,5 @@
-[![HacktoberFest 2022](./assets/logo.png)](https://hacktoberfest.com)
+[![HacktoberFest 2022](./assets/logo-dark.png#gh-dark-mode-only)](https://hacktoberfest.com)
+[![HacktoberFest 2022](./assets/logo-light.png#gh-light-mode-only)](https://hacktoberfest.com)
 
 # HacktoberFest 2022
 
