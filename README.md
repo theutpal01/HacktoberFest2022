@@ -32,10 +32,14 @@ It's very easy. Follow the below steps you need to create your -(maybe)- EXAMPLE
 - Addition of two numbers given by user
 - Reversing the string entered by user
 - Conversion of a number system to another number system
+- Change the temperature from Celcius to Farenheit
+- Find the factorial of a number entered by user
+- Find the greatest number among the 5 given numbers by user
+- Create the patterns using logic
 - Dice Roll Generator - In each execution, a number from 1 to 6 will be printed randomly
+- Binary search algorithm
 - Number Guessing Game
 - Rock Paper Scissors
-
 
 
 ***
