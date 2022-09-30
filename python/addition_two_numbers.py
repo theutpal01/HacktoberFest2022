@@ -1,3 +1,8 @@
+"""
+ADDITION OF TWO NUMBERS - USING PYTHON
+CREATOR - AmorimGabrielCE
+"""
+
 import tkinter
 from tkinter import *
 
