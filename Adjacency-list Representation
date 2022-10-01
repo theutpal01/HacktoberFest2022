@@ -1,0 +1,116 @@
+from enum import Enum
+
+class Color(Enum):
+    White = 1
+    Gray = 2
+    Black = 3
+
+'''
+  Node to store the real element.
+  Contain data and pointer to the
+  first element (head) of the adjacency list.
+'''
+class Node():
+    def __init__(self, d):
+        self.data = d
+        self.head = None
+        self.color = Color.White
+'''
+  Node for linked list of adjacent elements.
+  This will contain a pointer for next node.
+  It will not contain the real element but the index of
+  element of the array containing all the vertices V.
+'''
+class ListNode():
+    def __init__(self, item_index):
+        self.index_of_item = item_index
+        self.next = None
+
+class Graph():
+    def __init__(self, no_of_vertices):
+        self.number_of_vertices = no_of_vertices
+        self.heads = [None]*no_of_vertices #to store nodes, all vertices.
+
+        for i in range(0, self.number_of_vertices):
+            if(self.heads[i] == None):
+                z = Node(-1)
+                self.heads[i] = z
+
+    def add_node_to_graph(self, data):
+        z = Node(data)
+        for i in range(0, self.number_of_vertices):
+            if(self.heads[i].data < 0):
+                self.heads[i] = z
+                break
+
+    def in_head_list(self, data):
+        for i in range(0, self.number_of_vertices):
+            if(self.heads[i].data == data):
+                return True
+        return False
+
+    def add_edge(self, source, dest):
+        if(not(self.in_head_list(source))):
+            self.add_node_to_graph(source)
+
+        if(not(self.in_head_list(dest))):
+            self.add_node_to_graph(dest)
+
+        for i in range(0, self.number_of_vertices):
+            if(self.heads[i].data == source): #source node found
+                dest_index = 0
+
+                for j in range(0, self.number_of_vertices):
+                    if(self.heads[j].data == dest): #destination node found
+                        dest_index = j
+                        break
+
+                n = ListNode(dest_index)
+                if(self.heads[i].head == None):
+                    self.heads[i].head = n
+                else:
+                    temp = self.heads[i].head
+
+                    while(temp.next != None):
+                        temp = temp.next
+                    temp.next = n
+                break
+
+        #if graph is undirected, there will also be edge from dest to source
+        for i in range(0, self.number_of_vertices):
+            if(self.heads[i].data == dest):
+                source_index = 0
+
+                for j in range(0, self.number_of_vertices):
+                    if(self.heads[j].data == source):
+                        source_index = j
+                        break
+
+                n = ListNode(source_index)
+                if(self.heads[i].head == None):
+                    self.heads[i].head = n
+                else:
+                    temp = self.heads[i].head
+
+                    while(temp.next != None):
+                        temp = temp.next
+                    temp.next = n
+                break
+
+    def print_graph(self):
+        for i in range(0, self.number_of_vertices):
+            temp = self.heads[i].head
+            print(str(self.heads[i].data) + '\t', end='') # to print without newline
+            while(temp != None):
+                print(str(self.heads[temp.index_of_item].data) + '\t', end='')
+                temp = temp.next
+            print('')
+
+if __name__ == '__main__':
+    g = Graph(4)
+    g.add_edge(1, 2)
+    g.add_edge(1, 3)
+    g.add_edge(2, 4)
+    g.add_edge(3, 2)
+
+    g.print_graph()
