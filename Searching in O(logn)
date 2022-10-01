@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+           int a[20],m,n,x,pos=-1,j;
+           cout<<"Enter the size of the array:";
+           cin>>m;
+           cout<<"Enter the array:\n";
+           for(int i=0;i<m;i++)
+                      cin>>a[i];
+           for(int i=1;i<m;i*=2)
+           {
+                      if(a[i]==0)
+                      {
+                                 j=i-1;
+                                 while(a[j]==0)
+                                            j--;
+                      }
+           }
+           n=j;
+           cout<<"Enter the element to be searched:";
+           cin>>x;
+           if(x==0)
+                      cout<<"The given element is present in the array !!";
+           else
+           {
+                      int beg=0;
+                      int last=n;
+                      while(beg<=last)
+                      {
+                                 int mid=((beg+last)/2);
+                                 if(a[mid]==x)
+                                 {
+                                            pos=mid;
+                                            break;
+                                 }
+                                 else if(x<a[mid])
+                                            last=mid-1;
+                                 else
+                                            beg=mid+1;
+                      }
+                      if(pos==-1)
+                                 cout<<"The required element is not present in the array !!";
+                      else
+                                 cout<<"The given element is present in the array at "<<pos<<" position";
+           }
+           return 0;
+}
