@@ -1,0 +1,72 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "ubuntu", Arial, Helvetica, sans-serif;
+}
+body{
+    background: #4121f4c0;
+}
+.payment{
+    background: #f8f8f8;
+    max-width: 400px;
+    margin: 60px auto;
+    height: auto;
+    padding: 40px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.payment h2{
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #0e0d61da;
+}
+
+.form{
+    display: block;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+.input{
+    padding: 12px 0px 12px 25px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #dddddd;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.card-label{
+    display: block;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+.card-group{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.card-item{
+    width: 48%;
+
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    margin-left: 40%;
+    padding: 5px 5px 5px 5px;
+}
+.pay-btn{
+    margin-top: 40px;
+    background: #2148f8;
+    color: #f8f8f8;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+}
