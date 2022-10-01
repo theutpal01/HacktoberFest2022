@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payment Gateway</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="paymentgateway.css" />
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div class="payment">
+                <h2>Payment Gateway</h2>
+                <div class="form">
+                    <div class="card-group">
+                        <label class="card-label">Card Holder:</label>
+                        <input type="text" class="input" placeholder="Abhi" />
+                    </div>
+                    <div class="card-group">
+                        <label class="card-label">Card Holder:</label>
+                        <input type="text" class="input" inputmode="numeric" placeholder="Card Number" />
+                    </div>
+                    <div class="card-group">
+                        <div class="card-item">
+                           <label class="card-label">Expiry date:</label>
+                           <input type="text" name="expiry-date"class="input" placeholder="25/25" />
+                        </div>
+                        <div class="card-item">
+                            <label class="card-label">CVV:</label>
+                            <input type="text" name="CVV"class="input" data-mask="111" placeholder="111" />
+                         </div>
+                    </div>
+                    <div class="center">
+                        <button class="pay-btn" type="button">Pay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
