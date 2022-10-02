@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Array Sort</title>
+</head>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+<p>Sort the array in ascending order:</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+const points = [40, 100, 1, 5, 25, 10, 45, 4];
+document.getElementById("demo1").innerHTML = points;  
+
+points.sort(function(a, b){return a - b});
+document.getElementById("demo2").innerHTML = points;
+</script>
+
+</body>
+</html>
