@@ -15,9 +15,11 @@ int LinearSearch(int arr[], int n, int key)
 int main()
 {
     int n;
+    cout<<"Enter number of elements you want to enter:";
     cin>>n;
 
     int arr[n];
+    cout<<"Enter the element: "
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
