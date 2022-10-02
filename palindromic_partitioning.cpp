@@ -85,5 +85,5 @@ int main()
     cin >> str;
 
     int res = palindromicPartition(str);
-    cout << "\nLEAST Cuts Required for palindrome partitioning : " << res << endl;
+    cout << "\nFewest Number of Cuts Required for palindrome partitioning : " << res << endl;
 }
