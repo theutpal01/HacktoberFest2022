@@ -1,0 +1,39 @@
+#include<iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+	//deklarasi elemen
+	int mat[3][3], i, j;
+	float determinant = 0;
+	
+	cout<<"PROGRAM INVERS MATRIX ORDO 3x3\n\n";
+	cout<<"Masukkan elemen matriks ordo 3x3! \n";
+	
+	for(i = 0; i < 3; i++)
+	for(j = 0; j < 3; j++)
+    cin>>mat[i][j];
+    
+	printf("\nMatriks yang dicantumkan:");
+	for(i = 0; i < 3; i++){
+	cout<<"\n";
+	for(j = 0; j < 3; j++)
+	cout<<mat[i][j]<<"\t";
+	}
+	
+	//mencari determinan
+	for(i = 0; i < 3; i++)
+	determinant = determinant + (mat[0][i] * (mat[1][(i+1)%3] * mat[2][(i+2)%3] - mat[1][(i+2)%3] * mat[2][(i+1)%3]));
+	cout<<"\n\nNilai Determinan: "<<determinant;
+	
+	//mencari invers matrix
+	cout<<"\n\nInvers Matrix: \n";
+	for(i = 0; i < 3; i++){
+	for(j = 0; j < 3; j++)
+	cout<<((mat[(j+1)%3][(i+1)%3] * mat[(j+2)%3][(i+2)%3]) - (mat[(j+1)%3][(i+2)%3] * mat[(j+2)%3][(i+1)%3]))/ determinant<<"\t";
+	cout<<"\n";
+	}
+ 
+   return 0;
+}
