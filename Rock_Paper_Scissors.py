@@ -2,7 +2,6 @@ import random
 import sys
 
 print('WELCOME TO MY GAME WORLD: ROCK, PAPER, SCISSORS')
-# These variables keep track of the number of wins, losses, and ties.
 while True:
     computer_count = 0
     player_count = 0
