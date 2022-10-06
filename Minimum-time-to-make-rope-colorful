@@ -1,0 +1,55 @@
+
+// Alice has n balloons arranged on a rope. You are given a 0-indexed string colors where colors[i] is the color of the ith balloon.
+
+// Alice wants the rope to be colorful. She does not want two consecutive balloons to be of the same color, so she asks Bob for help. Bob can remove some balloons from the rope to make it colorful. You are given a 0-indexed integer array neededTime where neededTime[i] is the time (in seconds) that Bob needs to remove the ith balloon from the rope.
+
+// Return the minimum time Bob needs to make the rope colorful.
+
+
+#include<iostream>
+#include<vector>
+
+using namespace std; 
+
+int minCost(string colors, vector<int> &neededTime){
+    int totalTime = 0;
+    int i = 0, j = 0;
+        
+    while (i < neededTime.size() && j < neededTime.size()) {
+        int currTotal = 0, currMax = 0;
+            
+        // Find all the balloons having the same color as the 
+        // balloon indexed at i, record the total removal time 
+        // and the maximum removal time.
+        while (j < neededTime.size() && colors[i] == colors[j]) {
+            currTotal += neededTime[j];
+            currMax = max(currMax, neededTime[j]);
+            j++;
+        }
+            
+        // Once we reach the end of the current group, add the cost of 
+        // this group to total_time, and reset two pointers.
+        totalTime += currTotal - currMax;
+        i = j;
+    }
+    return totalTime;
+}
+
+int main(){
+    string colors;
+    getline(cin,colors);
+
+    vector<int> neededTime;
+
+    for (int i = 0; i < colors.length(); i++)
+    {
+        int j;
+        cin>>j;
+        neededTime.push_back(j);
+
+    }
+
+    cout<<minCost(colors, neededTime)<<endl;
+    
+    return 0;
+}
