@@ -3,8 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-    cout<<"Enter a Decimal value:";
+    printf("Enter a Decimal value:");
     int a;
-    cin>>a;
+    scanf("%d",&a);
     cout<<"The value in Binary would be :"<<bitset<8>(a).to_string()<<endl;
 }
