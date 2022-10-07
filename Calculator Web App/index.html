@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Calculator Web App</title>
+</head>
+<body>
+   <!--<div class="front-page"></div>
+    <div class="lower-front"></div>-->
+    <div class="container">
+    <div class = "inner-container">
+        <form name="forms">
+            <div class="display-box">
+                <div class="display">
+                    <div class="input">
+                        <input type="text" name="answer" class="form-control">
+                    </div>
+                    <input type="button" value="AC"class="clear" onclick="forms.answer.value='' ">
+                </div>
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 1 " onclick="forms.answer.value +='1' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 2 " onclick="forms.answer.value += '2' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 3 " onclick="forms.answer.value += '3' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" / " onclick="forms.answer.value += '/' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 4 " onclick="forms.answer.value += '4' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 5 " onclick="forms.answer.value += '5' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 6 " onclick="forms.answer.value += '6' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" * " onclick="forms.answer.value += '*' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 7" onclick="forms.answer.value += '7' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 8 " onclick="forms.answer.value += '8' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 9 " onclick="forms.answer.value += '9' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" - " onclick="forms.answer.value += '-' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" . " onclick="forms.answer.value += '.' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" 0 " onclick="forms.answer.value += '0' ">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" = " onclick="fn()">
+            </div>
+            <div class = "flex-child">
+                <input type="button" value=" + " onclick="forms.answer.value += '+' ">
+            </div>
+        </div>
+        </form>    
+</div>
+</body>
