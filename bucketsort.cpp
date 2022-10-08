@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 struct node
@@ -74,7 +73,6 @@ void Bucketsort(float *A, int n)
     int i = 0;
     int t = 0;
 
-
     while (i < n)
     {
         for (int j = 0; j < n; j++)
@@ -101,7 +99,6 @@ int main()
 {
     int i, n;
     float A[20];
-
     printf("Enter the value of n :");
     scanf("%d", &n);
     printf("Enter the %d array elements :", n);

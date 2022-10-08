@@ -125,57 +125,55 @@ int main()
         cin >> ch;
         switch (ch)
         {
-        case 1:
-        {
-            cout << "Enter value to be pushed in stack 1:" << endl;
-            cin >> val;
-            ts.push1(val);
-            break;
-        }
-        case 2:
-        {
-            cout << "Enter value to be pushed in stack 2: " << endl;
-            cin >> val;
-            ts.push2(val);
-            break;
-        }
-        case 3:
-        {
-
-            int x = ts.pop1();
-            if (x != -1)
+            case 1:
             {
-                cout << "Popped Value from stack 1 is " << x << endl;
+                cout << "Enter value to be pushed in stack 1:" << endl;
+                cin >> val;
+                ts.push1(val);
                 break;
             }
-            break;
-        }
-        case 4:
-        {
-
-            int x = ts.pop2();
-            if (x != -1)
+            case 2:
             {
-                cout << "Popped Value from stack 2 is " << x << endl;
+                cout << "Enter value to be pushed in stack 2: " << endl;
+                cin >> val;
+                ts.push2(val);
                 break;
             }
-            break;
-        }
+            case 3:
+            {
+                int x = ts.pop1();
+                if (x != -1)
+                {
+                    cout << "Popped Value from stack 1 is " << x << endl;
+                    break;
+                }
+                break;
+            }
+            case 4:
+            {
+                int x = ts.pop2();
+                if (x != -1)
+                {
+                    cout << "Popped Value from stack 2 is " << x << endl;
+                    break;
+                }
+                break;
+            }
 
-        case 5:
-        {
-            ts.display();
-            break;
-        }
-        case 6:
-        {
-            cout << "Exit" << endl;
-            break;
-        }
-        default:
-        {
-            cout << "Invalid Choice" << endl;
-        }
+            case 5:
+            {
+                ts.display();
+                break;
+            }
+            case 6:
+            {
+                cout << "Exit" << endl;
+                break;
+            }
+            default:
+            {
+                cout << "Invalid Choice" << endl;
+            }
         }
         
     } while (ch != 6);

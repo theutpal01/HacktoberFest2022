@@ -9,7 +9,8 @@ struct kStacks
     int cap, k; 
     int freeTop; 
     
-    kStacks(int k1, int n){
+    kStacks(int k1, int n)
+    {
         k = k1; cap = n; 
         arr = new int[cap]; 
         top = new int[k]; 
@@ -30,32 +31,32 @@ struct kStacks
     
     void push(int x, int sn) 
     { 
-    if (isFull()) 
-    { 
-        cout << "\nStack Overflow\n"; 
-        return; 
-    } 
-    
-    int i = freeTop;     
-    freeTop = next[i]; 
-    next[i] = top[sn]; 
-    top[sn] = i;
-    arr[i] = x; 
+        if (isFull()) 
+        { 
+            cout << "\nStack Overflow\n"; 
+            return; 
+        } 
+        
+        int i = freeTop;     
+        freeTop = next[i]; 
+        next[i] = top[sn]; 
+        top[sn] = i;
+        arr[i] = x; 
     } 
  
     int pop(int sn) 
     { 
-    if (isEmpty(sn)) 
-    { 
-         cout << "\nStack Underflow\n"; 
-         return INT_MAX; 
-    }
-    
-    int i = top[sn]; 
-    top[sn] = next[i];   
-    next[i] = freeTop; 
-    freeTop = i; 
-    return arr[i]; 
+        if (isEmpty(sn)) 
+        { 
+            cout << "\nStack Underflow\n"; 
+            return INT_MAX; 
+        }
+        
+        int i = top[sn]; 
+        top[sn] = next[i];   
+        next[i] = freeTop; 
+        freeTop = i; 
+        return arr[i]; 
     }
     
 }; 
