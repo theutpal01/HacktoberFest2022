@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 #include<iostream>
-
 using namespace std;
 
 long numlen(long num)
@@ -50,6 +49,5 @@ int main()
     cin>> b;
     cout<<a<<" * "<<b<<" = ";
     cout<<karatsuba(a,b);
-    
     cout<<endl;
 }

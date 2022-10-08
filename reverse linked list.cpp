@@ -55,4 +55,5 @@ int main()
         insert(&start, data);
     }
     reverselinked(start);
+    return 0;
 }
