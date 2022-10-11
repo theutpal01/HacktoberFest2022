@@ -7,12 +7,14 @@ int main(){
     int a;
     cin>>a;
     int bin=0;
-    int a2=a;
+    int a2=a, i=0, rem;
+    
     while(a2){
-        int rem=a2%2;
+        rem=a2%2;
+        rem*=pow(10,i);
         bin+=rem;
-        bin*=10;
         a2/=2;
+        i++;
     }
 
     cout<<a<<" in binary is "<<bin ;
