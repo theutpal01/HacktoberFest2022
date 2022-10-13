@@ -1,0 +1,41 @@
+def radix_sort(lst, base=10):
+    if lst == []:
+        return
+
+    def key_factory(digit, base):
+        def key(lst, index):
+            return ((lst[index]//(base**digit)) % base)
+        return key
+    # Find the maximum number to know number of digits
+    largest = max(lst)
+    exp = 0
+    while base**exp <= largest:
+        lst = counting_sort(lst, base - 1, key_factory(exp, base))
+        exp = exp + 1
+    return lst
+
+def counting_sort(lst, largest, key):
+    # Store the count of occurrences in count[]
+    c = [0]*(largest + 1)
+    for i in range(len(lst)):
+        c[key(lst, i)] = c[key(lst, i)] + 1
+
+        # Find the last index for each element
+
+    c[0] = c[0] - 1 
+    for i in range(1, largest + 1):
+        c[i] = c[i] + c[i - 1]
+
+    result = [None]*len(lst)
+    for i in range(len(lst) - 1, -1, -1):
+        result[c[key(lst, i)]] = lst[i]
+        c[key(lst, i)] = c[key(lst, i)] - 1
+
+    return result
+# manually entering the sets of numbers for radix sort
+lst = input('Enter the list of numbers: ').split()
+lst = [int(x) for x in lst]
+# calling the radix_sort functions
+sorted_list = radix_sort(lst)
+print('Sorted list: ', end='')
+print(sorted_list)
