@@ -1,10 +1,22 @@
 
-
-
 string = "Enter a number: "
 
-num1, num2, num3, num4, num5 = float(input(string)), float(input(string)), float(input(string)), float(input(string)), float(input(string))
+list=[]
 
-maxNum = max(num1, max(num2, max(num3, max(num4, num5))))
+#Give unlimited inputs, to finish giving input press Enter
 
-print("The greatest number among the given is", maxNum)
+while(True):
+  inp=input(string)
+  if(inp==""):
+    break
+  else:
+    list.append(float(inp))
+
+# Check weather a number is present or not
+
+if len(list)<1: # if Not Present
+  print("No Number is Entered")
+else: # If Present 
+  list.sort() # List is sorted in ascending order
+  maxNum=list[-1] # Last element of the list is stored in maxNum
+  print("The greatest number among the given is", maxNum)
