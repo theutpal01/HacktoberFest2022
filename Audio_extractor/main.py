@@ -1,4 +1,8 @@
-
+#!/usr/bin/env python
+import moviepy      # moviepy - Get this library installed in your system [pip install moviepy].
+import moviepy.editor
+from tkinter import *  # import Tkinter module
+from tkinter.filedialog import askopenfilename ,asksaveasfilename  # file dialog to get video and audio file paths.
 
 class Mp3extractor:
     def __init__(self, root):
