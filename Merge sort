@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+#define max 10
+
+int a[11] = { 10, 14, 19, 26, 27, 31, 33, 35, 42, 44, 0 };
+int b[10];      //Temporary array for storing the variables. 
+
+void Merge(int low, int mid, int high) {
+   int l1, l2, i;   //l1 and l2 variables are taken for computation where l1 will be used for 1st sub-array and l2 will be used for 2nd sub-array
+
+   for(l1 = low, l2 = mid + 1, i = low; l1 <= mid && l2 <= high; i++) { //In this loop, we will iterate through both the sub-arrays, where l1 and l2 are the starting positions for both the sub-arrays. i will be start from the 1st variable of the array. l1 will be iterated until it is the mid or the end of the 1st sub-array. l2 will be iterated until it is the end of the 2nd sub-array.
+      if(a[l1] <= a[l2])    //This line will compare after sorting the sub-arrays, which are the elements that need to be sorted in the final array
+         b[i] = a[l1++];    //If some element in the 1st sub-array is less than or equal to the element of the 2nd sub-array, then the element from the 1st sub-aray will be added to the temporary array.
+      else
+         b[i] = a[l2++];    
+   }
+   
+   while(l1 <= mid)     //This loop will iterate until l1 is less than or equal to the last element of the 1st sub-array
+      b[i++] = a[l1++];     //all the elements of the 1st sub-array will be stored in the temporary array.
+
+   while(l2 <= high)        //This will do the exact same as the previous for the 2nd sub-array  
+      b[i++] = a[l2++];
+
+   for(i = low; i <= high; i++)
+      a[i] = b[i];
+}
+
+void MergeSort(int low, int high) {     // Low and High here the 1st and last position of the array
+   int mid;         //mid is the variable that will divide the array into two sub-array
+   
+   if(low < high) {
+      mid = (low + high) / 2;
+      MergeSort(low, mid);      //This will recursively call the left sub-array
+      MergeSort(mid+1, high);   //This will recursively call the right sub-array
+      Merge(low, mid, high);    //This will call the merge procedure that is used for computational purpose in the MergeSort program
+   } else { 
+      return;
+   }   
+}
+
+int main() { 
+   int i;
+
+   printf("List before sorting\n");
+   
+   for(i = 0; i <= max; i++)
+      printf("%d ", a[i]);
+
+   MergeSort(0, max);
+
+   printf("\nList after sorting\n");
+   
+   for(i = 0; i <= max; i++)
+      printf("%d ", a[i]);
+}
