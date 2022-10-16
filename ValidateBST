@@ -1,0 +1,25 @@
+/*
+GFG Link:
+https://practice.geeksforgeeks.org/problems/check-for-bst/1
+*/
+
+public class Solution
+{
+    //Function to check whether a Binary Tree is BST or not.
+    boolean isBST(Node root)
+    {
+        // code here.
+        return isBST(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+    
+    boolean isBST(Node root, int min, int max){ //Method overloading
+        if(root==null)
+        return true;
+        
+        if(root.data>=max || root.data<=min)
+        return false;
+        
+        return isBST(root.left, min, root.data)
+            && isBST(root.right, root.data, max);
+    }
+}
