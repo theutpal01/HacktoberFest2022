@@ -1,3 +1,4 @@
+// Function for calculate factorial
 function factorial(n){
     //base case
     if(n == 0 || n == 1){
