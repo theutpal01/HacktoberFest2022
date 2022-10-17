@@ -10,20 +10,31 @@ and returns true, otherwise prints "not found"
 and returns false */
 int search(int mat[4][4], int n, int x)
 {
+    int h=0;
     if (n == 0)
         return -1;
+    /*if(x<mat[0][0]){
+        goto end;
+    }   */
  
-    // traverse through the matrix
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++)
-            // if the element is found
-            if (mat[i][j] == x) {
-                cout << "Element found at (" << i << ", "
-                     << j << ")\n";
-                return 1;
-            }
+    
+    for (int i = 0; mat[i][0] <=x&&i<n; i++) {
+        h=i;
     }
- 
+    for (int i = 0; i < n; i++) {
+        if(mat[h][i]==x){
+           return 1;
+        }
+    }
+    for (int i = 0; mat[0][i] <=x&&i<n; i++) {
+        h=i;
+    }
+    for (int i = 0; i < n; i++) {
+        if(mat[i][h]==x){
+           return 1;
+        }
+    }
+    end:
     cout << "n Element not found";
     return 0;
 }
