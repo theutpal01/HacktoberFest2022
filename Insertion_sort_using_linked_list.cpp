@@ -68,7 +68,7 @@ void insert(int x)
 
 
 
-void disp()
+void display()
 {
 
     struct Node *prt = head;
@@ -91,7 +91,7 @@ int main()
       insert(x);
     }
     
-disp();
+display();
     return 0;
 }
 
