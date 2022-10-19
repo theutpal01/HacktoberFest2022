@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int LinearSearch(int arr[], int n, int key)
+int LinearSearch(int arr[], int n, int key) 
 {
     for(int i=0;i<n;i++){
         if(arr[i]==key){
@@ -14,18 +14,14 @@ int LinearSearch(int arr[], int n, int key)
 
 int main()
 {
-    int n;
+    int n; // create a variable
     cin>>n;
-
     int arr[n];
     for(int i=0;i<n;i++){
-        cin>>arr[i];
+        cin>>arr[i]; // taking an array input using loop
     }
-
     int key;
     cin>>key;
-
     cout<<LinearSearch(arr, n, key)<<endl;
-
     return 0;
 }
