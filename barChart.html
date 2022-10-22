@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bar Chart</title>
+    <style>
+        dl {
+            display: flex;
+            background-color: white;
+            flex-direction: column;
+            width: 100%;
+            max-width: 700px;
+            position: relative;
+            padding: 20px;
+        }
+
+        dt {
+            align-self: flex-start;
+            width: 100%;
+            font-weight: 700;
+            display: block;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            margin-left: 130px;
+        }
+
+        .text {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            width: 130px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            justify-content: flex-end;
+        }
+
+        .percentage {
+            font-size: .8em;
+            line-height: 1;
+            text-transform: uppercase;
+            width: 0;
+            height: 40px;
+            margin-left: 130px;
+        }
+
+        html, body {
+            height: 500px;
+            font-family: "fira-sans-2",sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="bars" type="number" />
+        <div>
+            <input id="name" required type="text" placeholder="name" />
+            <input id="percentage" required type="text" placeholder="percentage" />
+            <button onclick="getInputs()">next</button>
+        </div>
+        <button onclick="generateBar()">Generate</button>
+        <dl id="dl">
+            <dt>
+                Browser market share June 2015
+            </dt>
+        </dl>
+<!--<dd class="percentage percentage-11"><span class="text">IE 11: 11.33%</span></dd>-->
+    </div>
+    <script>
+        var inputs = {};
+        function getInputs() {
+            inputs[document.getElementById("name").value] = document.getElementById("percentage").value;
+            console.log(inputs);
+            document.getElementById("name").value = document.getElementById("percentage").value = "";
+        }
+        function generateBar() {
+            //var barNumbers = document.getElementById("bars").value;
+            document.getElementById("dl").innerHTML = "";
+            for (var key in inputs) {
+                var x = Math.floor(Math.random() * 256);
+                var y = 100 + Math.floor(Math.random() * 256);
+                var z = 50 + Math.floor(Math.random() * 256);
+                var randomColor = "rgb(" + x + "," + y + "," + z + ")";
+                var element = `<dd class="percentage percentage-2" style="width:${inputs[key]}%;background-color:${randomColor};"><span class="text">${key}: ${inputs[key]}% </span></dd>`;
+                document.getElementById("dl").innerHTML += element;
+            }
+        }
+    </script>
+</body>
+</html>
