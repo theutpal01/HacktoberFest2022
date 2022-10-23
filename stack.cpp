@@ -68,7 +68,7 @@ int main()
 {
 	Stack st(5);
 	st.push(22);
-	st.push(43);
+	st.push(403);
 	st.pop();
 	cout<<st.peek()<<endl;
 }
