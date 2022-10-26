@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions</title>
+    <script type="text/javascript">
+        function strFns()
+        {
+            var txt = "Greetings, Hello, Hi, Goodbye";
+            document.writeln(`<h2> ${txt} </h2>`);
+            document.writeln("Length of the given text is <strong>" + txt.length + "</strong> characters.<br/><br/>");
+            document.writeln("Extracting string by using slice(18,26): <strong>" + txt.slice(18,26) + "</strong><br/>");
+            document.writeln("Extracting string by using slice(-20,-10): <strong>" + txt.slice(-20,-10) + "</strong><br/>");
+            document.writeln("Extracting string by using slice(18): <strong>" + txt.slice(18) + "</strong><br/>");
+            document.writeln("Extracting string by using substring(18,26): <strong>" + txt.substring(18,26) + "</strong><br/>");
+            document.writeln("Extracting string by using substr(18,3): <strong>" + txt.substr(18,3) + "</strong><br/>");
+            document.writeln("Extracting string by using substr(10): <strong>" + txt.substr(10) + "</strong><br/>");
+            document.writeln("Extracting string by using substr(-10): <strong>" + txt.substr(-10) + "</strong><br/><br/>");
+            document.writeln("Replacing : " + txt.replace("Goodbye, Bye") + "<br/>");
+            document.writeln("Replacing : " + txt.replace(/HELLO/i,"Good Evening") + "<br/><br/>");
+            document.writeln("To uppercase : " + txt.toUpperCase() +  "<br/>");
+            document.writeln("To lowercase : " + txt.toLowerCase() +  "<br/><br/>");
+            document.writeln("Concatenation : " + txt.concat(" ", ",Good Day") + "<br/><br/>");
+            var text1 = "      The whitespaces      ";
+            document.writeln(`<h2> Length of text1 before trimming = ${text1.length} </h2>`);
+            var text2 = text1.trim();
+            document.writeln(`<h2> Length of text1 after trimming = ${text2.length} </h2>`);
+            document.writeln("Using padStart : "+ txt.padStart(35,"0") + "<br/>");
+            document.writeln("Using padEnd : "+ txt.padEnd(35,"0") + "<br/><br/>");
+            document.writeln("Character at 10th position : "  + txt.charAt(8) + "<br/>");
+            document.writeln("Unicode of 10th position character : "  + txt.charCodeAt(8) + "<br/><br/>");
+            var strArray = txt.split(",");
+            document.writeln("Converting into ARRAY : ");
+            for (i=0; i<strArray.length; i++) 
+                document.writeln(strArray[i]);
+            document.writeln("<br/>");
+            var charArray = txt.split("");
+            document.writeln("Converting into Array of charcaters : ");
+            for(i=0; i<charArray.length; i++)
+                document.writeln(charArray[i]);
+            
+            
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="strFns()">String Functions</button>
+</body>
+</html>
