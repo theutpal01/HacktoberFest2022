@@ -1,18 +1,12 @@
-#include <iostream>
-using namespace std;
+def add(num1: int, num2: int) -> int:
+    """Add two numbers"""
+    num3 = num1 + num2
+ 
+    return num3
+ 
+# Driver code
+num1 =int(input("enter the first value : "))
+num2 =int(input("enter the second value : "))
+ans = add(num1, num2)
+print(f"The addition of {num1} and {num2} results {ans}.")
 
-int main() {
-
-  int first_number, second_number, sum;
-    
-  cout << "Enter two integers: ";
-  cin >> first_number >> second_number;
-
-  // sum of two numbers in stored in variable sumOfTwoNumbers
-  sum = first_number + second_number;
-
-  // prints sum 
-  cout << first_number << " + " <<  second_number << " = " << sum;     
-
-  return 0;
-}
