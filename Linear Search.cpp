@@ -12,6 +12,8 @@ int LinearSearch(int arr[], int n, int key)
     return -1;
 }
 
+///// add comment to split the line
+
 int main()
 {
     int n;
